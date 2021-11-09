@@ -17,6 +17,7 @@ let secretNumber = Math.trunc(Math.random() * 20) + 1;
 document.querySelector('.number').textContent = secretNumber;
 
 let score = 20;
+let highScore = 0;
 
 
 
@@ -35,6 +36,10 @@ document.querySelector(".check").addEventListener("click", function() {
         document.querySelector(".message").textContent = "🎉 Correct Number!";
         document.querySelector("body").style.backgroundColor = "green";
         document.querySelector(".number").style.width = "30rem";
+        if (score > highScore) {
+            highScore = score;
+            document.querySelector(".highscore").textContent = highScore;
+        }
     }
 
     // When guess is higher than the secretNumber (Too High)
