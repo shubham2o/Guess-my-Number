@@ -17,8 +17,8 @@ document.querySelector(".check").addEventListener("click", function() {
     const guess = Number(document.querySelector(".guess").value);
     console.log(typeof guess);
 
-    if(!guess) {           // guess is equal to 0 at this point and 0 as a boolean always return false and we want this false  
-        document.querySelector(".message").textContent =      // to be true so that's why we used !guess (!false, i.e, true).
+    if(!guess) {                                                 // guess is equal to 0 at this point and 0 as a boolean always return false and   
+        document.querySelector(".message").textContent =         // we want this false to be true so that's why we used !guess (!false, i.e, true).
         "⛔No Number!" ;                     
     }
 });
