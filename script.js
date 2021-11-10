@@ -15,6 +15,8 @@ document.querySelector('.guess').value = 23; */
 // Implementing Game Logic
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 document.querySelector('.number').textContent = secretNumber;
+document.querySelector(".number").textContent = "?";
+
 
 let score = 20;
 let highScore = 0;
@@ -34,6 +36,7 @@ document.querySelector(".check").addEventListener("click", function() {
     // When player wins
     else if (guess === secretNumber) {
         document.querySelector(".message").textContent = "🎉 Correct Number!";
+        document.querySelector(".number").textContent = secretNumber;
         document.querySelector("body").style.backgroundColor = "green";
         document.querySelector(".number").style.width = "30rem";
         if (score > highScore) {
@@ -52,6 +55,7 @@ document.querySelector(".check").addEventListener("click", function() {
         else {
             document.querySelector(".message").textContent = " 💥 You Lost the game!";
             document.querySelector(".score").textContent = 0;
+            document.querySelector(".number").textContent = secretNumber;
         }
     }
 
@@ -65,6 +69,7 @@ document.querySelector(".check").addEventListener("click", function() {
         else {
             document.querySelector(".message").textContent = " 💥 You Lost the game!";
             document.querySelector(".score").textContent = 0;
+            document.querySelector(".number").textContent = secretNumber;
         }
     }
 });
